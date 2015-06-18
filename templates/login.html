@@ -1,0 +1,32 @@
+{% extends basic.html %}
+{% block css %}
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">
+{% end %}
+{% block content %}
+<h1>
+			Login
+</h1>
+<form class="form-horizontal" method="post" action='login' >
+	{% raw xsrf_form_html() %}
+	<!--handles a login(loginemail,loginpassword) for admin-->
+		
+	<div class="form-group">
+	    <label for="loginemail" class="col-sm-2 control-label">Email</label>
+	    <div class="col-sm-10">
+	      <input type="email" class="form-control" name="loginemail" style="width:300px" placeholder="Email">
+	    </div>
+	</div>
+	<div class="form-group">
+	    <label for="loginpassword" class="col-sm-2 control-label">Password</label>
+	    <div class="col-sm-10">
+	      <input type="password" class="form-control" name="loginpassword" style="width:300px" placeholder="Password">
+	    </div>
+	  </div>
+  
+
+	<div class="form-group">
+		<div class="col-sm-offset-2 col-sm-10">
+			<button type="submit" class="btn btn-default">Submit</button>
+		</div>
+	</div>
+{% end %}
